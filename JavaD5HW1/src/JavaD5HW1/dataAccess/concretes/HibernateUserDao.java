@@ -8,11 +8,9 @@ import JavaD5HW1.entities.concretes.User;
 
 public class HibernateUserDao implements UserDao {
 	
-	private ArrayList<User> users;
+	private ArrayList<User> users = new ArrayList<User>();
 	
-	public HibernateUserDao(ArrayList<User> users) {
-		this.users = users;
-	}
+	
 	@Override
 	public void add(User user) {
 		users.add(user);
@@ -21,16 +19,8 @@ public class HibernateUserDao implements UserDao {
 
 	@Override
 	public void update(User user) {
-		for (User user : users) {
-			if(user.getId() == user.getId()) {
-				user.setFirstName(user.getFirstName());
-				user.setLastName(user.getLastName());
-				user.setEmail(user.getEmail());
-				user.setPassword(user.getPassword());
-			System.out.println("Dear "+ user.getFirstName() + " " + user.getLastName() + " update is successful.");
-
-			}
-		}
+		users.add(user);
+		System.out.println("Dear "+ user.getFirstName() + " " + user.getLastName() + " update is successful.");
 		
 	}
 
@@ -42,16 +32,25 @@ public class HibernateUserDao implements UserDao {
 	}
 
 	@Override
-	public User getByMail(String mail) {
+	public ArrayList<User> getByMail(String mail) {
 		for (User user : users) {
 			if(user.getEmail().equals(mail)) {
+				return users;
+			}else {
+				return null;
+			}
+		}
+		return users;
+	
+	}
+
+	@Override
+	public User get(int id) {
+		for (User user : users) {
+			if(user.getId() == id) {
 				return user;
 			}
 		}
-		return null;
-	}
-	@Override
-	public List<User> getAll() {
 		
 		return null;
 	}

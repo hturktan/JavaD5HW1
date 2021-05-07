@@ -13,7 +13,13 @@ public class User implements Entity {
 	public User () {
 		
 	}
-
+	
+	public User(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+	
 	public User(int id, String firstName, String lastName, String email, String password) {
 		super();
 		this.id = id;
