@@ -49,7 +49,6 @@ public class UserManager implements UserService {
 
 	@Override
 	public boolean getByMail(String email) {
-		// TODO Auto-generated method stub
 		return false;
 	}
                    

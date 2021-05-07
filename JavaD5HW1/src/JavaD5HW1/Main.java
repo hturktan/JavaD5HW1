@@ -1,5 +1,6 @@
 package JavaD5HW1;
 
+import JavaD5HW1.business.abstracts.UserService;
 import JavaD5HW1.business.concretes.AuthManager;
 import JavaD5HW1.business.concretes.UserManager;
 import JavaD5HW1.core.AutGoogleAdapter;
@@ -16,18 +17,19 @@ public class Main {
 		User user2 = new User(2, "Mehmet","Hasan", "mehmet@hasan","147369");
 		
 		
+	
 		
 		AuthManager authManager=new AuthManager(new UserManager(new HibernateUserDao()), new AutGoogleAdapter(null));
 		authManager.register(user1);
-		System.out.println("----------------------------");
+		System.out.println(" ");
 		authManager.register(user2);
-		System.out.println("----------------------------");
+		System.out.println(" ");
 	
 		 
 		authManager.login(user1);
-		System.out.println("----------------------------");
+		System.out.println(" ");
 		authManager.login(user2);
-		System.out.println("----------------------------");
+		System.out.println(" ");
 
 	}
 
